@@ -1,0 +1,27 @@
+{
+    "manifest_version": 3,
+    "name": "Bet Bot",
+    "description": "Extension for placing cyclical, semi-cyclical and instant bet",
+    "version": "1.0",
+    "permissions": [
+        "activeTab",
+        "scripting"
+    ],
+    "action": {
+        "default_icon": "betbot.png"
+    },
+    "background": {
+        "service_worker": "serviceworker.js"
+    },
+    "content_scripts": [
+        {
+            "js": [
+                "scripts/content.js"
+            ],
+            "matches": [
+                "https://betmais.com/br/*",
+                "https://betmais.com/br/*/*"
+            ]
+        }
+    ]
+}
